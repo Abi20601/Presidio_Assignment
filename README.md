@@ -1,4 +1,4 @@
-# Project Overview
+# Project Overview (https://presidio-assignment-indol.vercel.app/)
 
 This project is a comprehensive web application that integrates Firebase Authentication and Firestore Database with a React frontend to create a dynamic user experience. It supports user authentication, allowing users to sign in using their email/password. Once authenticated, users can perform CRUD (Create, Read, Update, Delete) operations on rental properties if they are sellers, or view and express interest in properties if they are buyers. The application utilizes React Router for navigation and Bootstrap for styling, ensuring a responsive and intuitive user interface.
 
