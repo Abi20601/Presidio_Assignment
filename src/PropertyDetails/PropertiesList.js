@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { db } from '../config/firebase';
 import { collection, getDocs, deleteDoc, doc } from 'firebase/firestore';
 import Navbar from '../components/NavbarComponent';
+
 const PropertiesList = () => {
   const [properties, setProperties] = useState([]);
 

@@ -11,6 +11,7 @@ import  Dashboardbuyer from './components/Dashboardbuyer';
 import PropertyForm from './PropertyDetails/PropertyForm';
 import PropertiesList from './PropertyDetails/PropertiesList';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import BuyerPage from './PropertyDetails/PropertyBuyer';
 
 function App() {
   return (
@@ -32,6 +33,7 @@ function App() {
                   <Dashboardbuyer />
                 </PrivateRoute>
               } />
+              <Route path="/buyerpage" element={<BuyerPage />} />
               <Route path="/signup" element={<Signup />} />
               <Route path="/login" element={<Login />} />
               <Route path="/property-form" element={<PropertyForm />} />

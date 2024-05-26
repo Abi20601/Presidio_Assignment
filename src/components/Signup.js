@@ -73,9 +73,13 @@ function Signup() {
                 </Form.Group> 
 
                 <Form.Group id="user">
-                        <Form.Label>User</Form.Label>
-                        <Form.Control type = "text" ref={userTypeRef} required />
-                </Form.Group>                             
+    <Form.Label>User Type</Form.Label>
+    <Form.Select ref={userTypeRef} required>
+        <option value="" disabled>Select User Type</option>
+        <option value="buyer">Buyer</option>
+        <option value="seller">Seller</option>
+        </Form.Select>
+        </Form.Group>                            
 
                 <Form.Group id="email">
                     <Form.Label>Email</Form.Label>

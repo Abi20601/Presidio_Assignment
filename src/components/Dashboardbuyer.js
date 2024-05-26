@@ -1,12 +1,12 @@
 import React from 'react'
-import PropertyForm from '../PropertyDetails/PropertyForm';
+import BuyerPage from '../PropertyDetails/PropertyBuyer';
 import NavbarBuy from './NavbarBuy';
 
 function Dashboardbuyer() {
   return (
     <>
     <NavbarBuy />
-    <PropertyForm />
+    <BuyerPage />
   </>
   )
 }
