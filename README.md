@@ -1,49 +1,70 @@
-# Project Overview
+# Getting Started with Create React App
 
-This project is a comprehensive web application that integrates Firebase Authentication and Firestore Database with a React frontend to create a dynamic user experience. It supports user authentication, allowing users to sign in using their email/password . Once authenticated, users can perform CRUD (Create, Read, Update, Delete) operations on rental properties if they are sellers, or view and express interest in properties if they are buyers. The application utilizes React Router for navigation and Bootstrap for styling, ensuring a responsive and intuitive user interface.
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Key Features
+## Available Scripts
 
-- **User Authentication**: Secure login and registration functionality using Firebase Authentication. Supports email/password and Google sign-in methods.
-- **CRUD Operations**: Allows authenticated sellers to add, view, update, and delete their property listings.
-- **Interest Expression**: Enables buyers to express interest in properties, revealing the seller's contact details.
-- **Responsive Design**: Utilizes Bootstrap to ensure the application is accessible and visually appealing across various devices.
-- **Dynamic Navigation**: Implements React Router for seamless navigation between different components of the application.
+In the project directory, you can run:
 
-## How to Operate the Webpage
+### `npm start`
 
-### Setting Up
+Runs the app in the development mode.\
+Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-1. **Firebase Configuration**: Ensure Firebase is configured with your project. Initialize Firebase Authentication and Firestore Database, enabling email/password and Google sign-in methods.
+The page will reload when you make changes.\
+You may also see any lint errors in the console.
 
-2. **Running the Application**:
-    - Clone the repository to your local machine.
-    - Install dependencies using `npm install`.
-    - Start the application using `npm start`.
+### `npm test`
 
-### Navigating the Application
+Launches the test runner in the interactive watch mode.\
+See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-1. **Login/Register**: 
-    - Access the login page from the navigation bar.
-    - New users can register by clicking the "Register" link and filling out the form.
-    - Existing users can log in using their email/password or Google account.
+### `npm run build`
 
-2. **Dashboard (Sellers)**:
-    - Upon logging in, sellers are directed to their dashboard where they can view their property listings.
-    - Sellers can add a new property by filling out the property form.
-    - Each property listing has options to edit or delete the property.
-    - Sellers can update property details by clicking the "Edit" button and submitting the updated form.
+Builds the app for production to the `build` folder.\
+It correctly bundles React in production mode and optimizes the build for the best performance.
 
-3. **Viewing Properties (Buyers)**:
-    - Buyers can view all listed properties on the "Properties List" page accessible from the navigation bar.
-    - Buyers can express interest in a property by clicking the "I'm Interested" button, revealing the seller's contact details.
+The build is minified and the filenames include the hashes.\
+Your app is ready to be deployed!
 
-4. **Applying Filters**:
-    - Buyers can apply filters to search for properties based on criteria like city, area, number of bedrooms, etc., to find properties that match their preferences.
+See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-5. **Logout**:
-    - Users can log out by clicking the "Logout" button in the navigation bar. This will redirect them to the login page.
+### `npm run eject`
 
+**Note: this is a one-way operation. Once you `eject`, you can't go back!**
 
+If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-**LINK HOSTED IN VERCELL** : https://presidio-assignment-indol.vercel.app/
+Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+
+You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+
+## Learn More
+
+You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+
+To learn React, check out the [React documentation](https://reactjs.org/).
+
+### Code Splitting
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+
+### Analyzing the Bundle Size
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+
+### Making a Progressive Web App
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+
+### Advanced Configuration
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+
+### Deployment
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+
+### `npm run build` fails to minify
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
