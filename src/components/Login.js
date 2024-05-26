@@ -21,19 +21,17 @@ export default function Login() {
       setLoading(true);
       const userCredential = await login(emailRef.current.value, passwordRef.current.value);
       const uid = userCredential.user.uid;
-      // Fetch user type from Firestore
       const q = query(collection(db, "/1"), where("uid", "==", uid));
       const querySnapshot = await getDocs(q);
       let userType = "";
       querySnapshot.forEach((doc) => {
-        // doc.data() is never undefined for query doc snapshots
         userType = doc.data().usertype;
       });
 
       if (userType === "seller") {
-        navigate("/dashboardseller"); // Redirect to seller page
+        navigate("/dashboardseller"); 
       } else if (userType === "buyer") {
-        navigate("/dashboardbuyer "); // Redirect to buyer page
+        navigate("/dashboardbuyer ");
       } else {
         throw new Error("User type is undefined");
       }
@@ -50,7 +48,7 @@ export default function Login() {
       <Card>
         <Card.Body>
           <h2 className="text-center mb-4">Log In</h2>
-          <div>Latest User : { currentUser && currentUser.email && currentUser.uid}</div>  
+          <div>Latest User : { currentUser && currentUser.email }</div>  
           {error && <Alert variant="danger">{error}</Alert>}
           <Form onSubmit={handleSubmit}>
             <Form.Group id="email">
@@ -65,8 +63,7 @@ export default function Login() {
               Log In
             </Button>
           </Form>
-          <div className="w-100 text-center mt-3">
-          </div>
+          <div className="w-100 text-center mt-3">Forgot Password <Link to="/forgotpassword">Forget Password</Link> </div>
         </Card.Body>
       </Card>
       <div className="w-100 text-center mt-2">

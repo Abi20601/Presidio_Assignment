@@ -10,7 +10,7 @@ const BuyerPage = () => {
 
   useEffect(() => {
     const fetchProperties = async () => {
-      const q = query(collection(db, "properties")); // Assuming 'properties' is your collection
+      const q = query(collection(db, "properties")); 
       const querySnapshot = await getDocs(q);
       setProperties(querySnapshot.docs.map(doc => ({ id: doc.id, ...doc.data() })));
     };
@@ -19,10 +19,10 @@ const BuyerPage = () => {
   }, []);
 
   const handleInterest = async (sellerUid) => {
-    const q = query(collection(db, "1"), where("uid", "==", sellerUid)); // Adjust "1" to your users collection
+    const q = query(collection(db, "1"), where("uid", "==", sellerUid)); 
     const querySnapshot = await getDocs(q);
-    const sellerDetails = querySnapshot.docs.map(doc => doc.data())[0]; // Assuming only one seller per uid
-    alert(`Seller Contact: ${sellerDetails.email}`); // Display seller details, adjust as needed
+    const sellerDetails = querySnapshot.docs.map(doc => doc.data())[0]; 
+    alert(`Seller Contact: ${sellerDetails.phonenumber}`); 
   };
 
   return (
@@ -32,19 +32,30 @@ const BuyerPage = () => {
       <Form>
         <Form.Group className="mb-3">
           <Form.Label>Filter Properties</Form.Label>
-          <Form.Control type="text" placeholder="Enter filter criteria" onChange={e => setFilter(e.target.value)} />
+          <Form.Control type="text" placeholder="Enter Desired City" onChange={e => setFilter(e.target.value)} />
         </Form.Group>
       </Form>
-      {properties.filter(property => property.city.includes(filter)).map((property) => ( // Example filter by city
+      {properties.filter(property => property.city.includes(filter)).map((property) => ( 
         <Card key={property.id} className="mb-3">
-          <Card.Body>
+        <Card.Body>
             <Card.Title>{property.city}</Card.Title>
             <Card.Text>
-              Area: {property.area} sqft
-              {/* Display other property details */}
+                Area: {property.area} sqft
             </Card.Text>
-            <Button variant="primary" onClick={() => handleInterest(property.owner_uid)}>I'm Interested</Button>
-          </Card.Body>
+            <Card.Text>
+                Bedrooms: {property.bedrooms}
+            </Card.Text>
+            <Card.Text>
+                Bathrooms: {property.bathrooms}
+            </Card.Text>
+            <Card.Text>
+                Nearby Hospitals: {property.nearbyHospitals}
+            </Card.Text>
+            <Card.Text>
+                Nearby Colleges: {property.nearbyColleges}
+            </Card.Text>
+            <Button variant="primary" onClick={() => handleInterest(property.uid)}>I'm Interested</Button>
+        </Card.Body>
         </Card>
       ))}
     </div>

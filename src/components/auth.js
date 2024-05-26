@@ -18,7 +18,6 @@ export function Authprovider({ children }) {
     async function signup(email,password,userDetails){
         return auth.createUserWithEmailAndPassword(email,password)
         .then((userCredential) => {
-            // Add additional user details to Firestore
             return db.collection("/1").add({
               uid: userCredential.user.uid,
               firstname: userDetails.firstName,
@@ -29,8 +28,16 @@ export function Authprovider({ children }) {
           });
     } 
 
-    function login(email, password) {
+    async function login(email, password) {
         return auth.signInWithEmailAndPassword(email, password)
+      }
+
+     async function resetPassword(email) {
+        return auth.sendPasswordResetEmail(email)
+      } 
+      
+    async function logout() {
+        return auth.signOut()
       }
     
     useEffect(() => {
@@ -45,7 +52,9 @@ export function Authprovider({ children }) {
     const value = {
         currentUser,
         login,
-        signup
+        signup,
+        resetPassword,
+        logout
     }
 
     

@@ -1,8 +1,25 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React,{useState} from 'react';
+import { useAuth } from "./auth"
+import { Link, useNavigate } from 'react-router-dom';
 
 
 const NavbarComponent = () => {
+    
+    const [error, setError] = useState("")
+    const { currentUser, logout } = useAuth()
+    const history = useNavigate()
+
+    async function handleLogout() {
+        setError("")
+    
+        try {
+          await logout()
+          history.push("/login")
+        } catch {
+          setError("Failed to log out")
+        }
+      }
+
   return (
     <nav className="navbar navbar-expand-lg navbar-light fixed-top" style={{ backgroundColor: 'rgba(255, 255, 255, 0.5)' }}>
       <div className="container-fluid">
@@ -13,10 +30,13 @@ const NavbarComponent = () => {
         <div className="collapse navbar-collapse" id="navbarNav">
           <ul className="navbar-nav">
             <li className="nav-item">
-              <Link className="nav-link" to="/property-form">Property Form</Link>
+              <Link className="nav-link" to="/property-form">Add Property</Link>
             </li>
             <li className="nav-item">
-              <Link className="nav-link" to="/property-list">Properties List</Link>
+              <Link className="nav-link" to="/property-list">Available Property</Link>
+            </li>
+            <li className="nav-item">
+              <Link className="nav-link" to="/" onClick={() => { handleLogout(); }}>Log out</Link>
             </li>
           </ul>
         </div>

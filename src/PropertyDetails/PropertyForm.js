@@ -29,7 +29,7 @@ const PropertyForm = () => {
     try {
       await addDoc(collection(db, "properties"), {
         ...property,
-        owner_uid: currentUser.uid, // Add the current user's uid to the document
+        owner_uid: currentUser.uid, 
       });
       alert("Property added successfully!");
     } catch (error) {

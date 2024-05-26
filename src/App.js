@@ -2,8 +2,7 @@ import './App.css';
 import Signup from "./components/Signup";
 import { Container } from 'react-bootstrap';
 import { Authprovider } from './components/auth';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import { useAuth } from "./components/auth";
+import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import PrivateRoute from "./components/PrivateRoute"
 import Login from "./components/Login"
 import  Dashboardseller from './components/Dasboardseller';
@@ -12,6 +11,7 @@ import PropertyForm from './PropertyDetails/PropertyForm';
 import PropertiesList from './PropertyDetails/PropertiesList';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import BuyerPage from './PropertyDetails/PropertyBuyer';
+import  ForgotPassword from './components/ForgotPassword';
 
 function App() {
   return (
@@ -33,11 +33,13 @@ function App() {
                   <Dashboardbuyer />
                 </PrivateRoute>
               } />
-              <Route path="/buyerpage" element={<BuyerPage />} />
+              <Route path="/forgotpassword" element={<ForgotPassword />} />
               <Route path="/signup" element={<Signup />} />
               <Route path="/login" element={<Login />} />
               <Route path="/property-form" element={<PropertyForm />} />
               <Route path="/property-list" element={<PropertiesList />} />
+              <Route path="/" element={<Navigate to="/login" replace />} />
+              <Route path="/buyerpage" element={<BuyerPage />} />
               </Routes>
           </Authprovider>
         </Router>
